@@ -6,7 +6,7 @@ scaffold, position, reference_nucleotide, alternative_nucleotide, allele_count a
 
 To produce this kind of file from a vcf.gz you can use the following bash command: 
 ```bash
-bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query -f '%CHROM	%POS	%REF	%ALT %AC	%AN ' > population1_summary.txt 
+bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%AC\t%AN\n' > population1_summary.txt 
 ```
 The word before _summary.txt will be used as a name for each population so name your files accordingly
 
