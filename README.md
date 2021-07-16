@@ -43,3 +43,23 @@ fixed fixed diff  &#10132;  FIXED
 snp snp diff  &#10132;  SHARED  
 fixed snp diff  &#10132;  PRIVATE  
 snp fixed diff  &#10132;  PRIVATE
+
+## Download the computed data frame
+On the third tab you can download the big dataframe containing all information about which snp is shared fixed or private in any pairwise population comparison  
+It has different columns :  
+scaffold: the name of the scaffold of the site considered  
+position: the position of the site considered  
+**Since there is a pairwise comparison between population x and population y some columns are duplicated (column.x belongs to population x)**
+ref.x: the ref nucleotide 
+alt.x: the alt nucleotide (can be *)
+sites.x: number of samples in each	alt genotype separated by a comma  
+individual_known.x: number of sample that genotype is known  
+source.x: name of the "x" population  
+number_of_ref.x: number of samples that have the same genotype as the reference  
+sites_fixed.x: a binary code of genotype present in the population with the first number equal to the reference and others are ALT genotype in order (of alt.x column). 1=present, 0=missing  
+fixed.x: Does all samples have the same genotype, if yes it writes "fixed"  
+
+diff: Does allele content (genotypes) are different between population x and population y  
+status: Status of this site for this pairwise comparison  
+pairwise: a pairwise comparison name in the format of "x vs y"
+![image](https://user-images.githubusercontent.com/86835441/125978461-3ae69af0-ccce-4f9e-a9aa-a7a048a2a4dd.png)
