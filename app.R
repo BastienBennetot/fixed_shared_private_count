@@ -1,3 +1,4 @@
+library(shiny)
 ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count"),
   tabsetPanel(
                 tabPanel("Input and Results", fluid = TRUE,
