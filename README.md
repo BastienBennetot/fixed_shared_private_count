@@ -33,11 +33,11 @@ When we compare alleles present in both population, they can have same allele co
 If allele content is different between population, then they are declared "diff"
 
 ## We can obtain these combinations
-fixed fixed	same	&#10132; IDENTIC 
-snp snp	same	=>SHARED 
-fixed snp	same	=>NOT POSSIBLE 
-snp fixed	same	=>NOT POSSIBLE 
-fixed fixed	diff	=>FIXED 
-snp snp	diff	=>SHARED 
-fixed snp	diff	=>PRIVATE 
-snp fixed	diff	=>PRIVATE
+fixed fixed same  &#10132;  IDENTIC 
+snp snp same  &#10132;  SHARED 
+fixed snp same  &#10132;  NOT POSSIBLE 
+snp fixed same  &#10132;  NOT POSSIBLE 
+fixed fixed diff  &#10132;  FIXED 
+snp snp diff  &#10132;  SHARED 
+fixed snp diff  &#10132;  PRIVATE 
+snp fixed diff  &#10132;  PRIVATE
