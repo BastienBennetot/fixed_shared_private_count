@@ -62,4 +62,3 @@ fixed.x: Does all samples have the same genotype, if yes it writes "fixed"
 diff: Does allele content (genotypes) are different between population x and population y  
 status: Status of this site for this pairwise comparison  
 pairwise: a pairwise comparison name in the format of "x vs y"
-![image](https://user-images.githubusercontent.com/86835441/125978461-3ae69af0-ccce-4f9e-a9aa-a7a048a2a4dd.png)
