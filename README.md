@@ -24,3 +24,20 @@ shiny::runGitHub("fixed_shared_private_count", "BastienBennetot",ref="main")
 ```
 
 Or you can clone or download this repository, and use `runApp()` function.
+
+## How SNP are computed ?
+There is two information when we compare alleles from population A and B 
+The SNP is said to be "fixed" if all samples from a population have the same allele 
+The SNP is said "snp" if at least one sample have a different allele within a population 
+When we compare alleles present in both population, they can have same allele content (same ref or alt or same combination of multiple alleles) then we declare them "same" 
+If allele content is different between population, then they are declared "diff"
+
+## We can obtain these combinations
+fixed fixed	same	=> IDENTIC 
+snp snp	same	=>SHARED 
+fixed snp	same	=>NOT POSSIBLE 
+snp fixed	same	=>NOT POSSIBLE 
+fixed fixed	diff	=>FIXED 
+snp snp	diff	=>SHARED 
+fixed snp	diff	=>PRIVATE 
+snp fixed	diff	=>PRIVATE
