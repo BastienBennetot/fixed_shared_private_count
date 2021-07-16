@@ -27,7 +27,7 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                          "within population :",br(),
                          "There is two information when we compare alleles from population A and B ",br(),
                          "The SNP is said to be \"fixed\" if all samples from a population have the same allele",br(),
-                         "Between population",br(),
+                         "Between population:",br(),
                          "The SNP is said \"snp\" if at least one sample have a different allele within a population",br(),
                          "When we compare alleles present in both populations, they can have same allele content (same ref or alt or same combination of multiple alleles) then we declare them \"same\" ",br(),
                          "If allele content is different between populations, then they are declared \"diff\" ",
