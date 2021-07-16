@@ -8,7 +8,7 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                  table with different columns: ",br(),"scaffold, position, reference_nucleotide, 
                                       alternative_nucleotide, allele_count and number_of_sample"),
                  "To produce this kind of file from a vcf.gz you can use the following bash command:",br(),
-                 "bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query  -f '%CHROM\t%POS\t%REF\t%ALT\t%AC\t%AN\n' > population1_summary.txt",br(),
+                 "bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query  -f '%CHROM\\t%POS\\t%REF\\t%ALT\\t%AC\\t%AN\\n' > population1_summary.txt",br(),
                  "The word before _summary.txt will be used as a name for each population so name your files accordingly",
                   fileInput(
                     inputId = "files", 
