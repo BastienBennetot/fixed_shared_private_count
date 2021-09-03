@@ -15,12 +15,10 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                                                     label = "Choose all summary files to upload at once", 
                                                     multiple = TRUE)
                                                   ),
-                                      mainPanel(fluidPage(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text"),
+                                      mainPanel(fluidPage(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text. Once done you can push the download button if you want"),
                                                  # This one is linked by the id 'download'
-                                                    #      tableOutput("contents")))
                                                  downloadButton('downloadtable',"Download the summary table"),
                                                           tableOutput("contents")))
-                                                # fluidRow(column(5,dataTableOutput('dtotable')))))
                                         )
                            ),
                 tabPanel("Other informations", fluid = TRUE,
