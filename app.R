@@ -17,9 +17,9 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                                           )
                              ),
                              mainPanel(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text")#,
-                                  #      downloadButton('downloadtable',"Download the summary table"),
+                                        downloadButton('downloadtable',"Download the summary table"),
                  #  fluidRow(column(7,dataTableOutput('dtotable'))
-                                    #   tableOutput("contents")
+                                       tableOutput("contents")
                              )
                            )
                   ),
