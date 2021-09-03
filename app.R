@@ -1,30 +1,30 @@
 library(shiny)
 ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count"),
-                tabsetPanel(
-                  tabPanel("Input and Results", fluid = TRUE,
-                           sidebarLayout(
-                             
-                             sidebarPanel(helpText(tags$h3("Data format"),"Your data must have a specific format, a tab separated
-                 table with different columns: ",br(),"scaffold, position, reference_nucleotide, 
-                                      alternative_nucleotide, allele_count and number_of_sample"),
-                                          "To produce this kind of file from a vcf.gz you can use the following bash command:",br(),
-                                          "bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query  -f '%CHROM\\t%POS\\t%REF\\t%ALT\\t%AC\\t%AN\\n' > population1_summary.txt",br(),
-                                          "The word before _summary.txt will be used as a name for each population so name your files accordingly",
-                                          fileInput(
-                                            inputId = "files", 
-                                            label = "Choose all summary files to upload at once", 
-                                            multiple = TRUE
-                                          )
-                             ),
-                       mainPanel(fluidPage(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text"),
-                                                                                  # This one is linked by the id 'download'
-                                                                                  downloadButton('downloadtable',"Download the summary table"),
+                    tabsetPanel(
+                    tabPanel("Input and Results", fluid = TRUE,
+                             sidebarLayout(
+
+                               sidebarPanel(helpText(tags$h3("Data format"),"Your data must have a specific format, a tab separated
+                   table with different columns: ",br(),"scaffold, position, reference_nucleotide, 
+                                        alternative_nucleotide, allele_count and number_of_sample"),
+                                            "To produce this kind of file from a vcf.gz you can use the following bash command:",br(),
+                                            "bcftools view -S population1_individual_list vcf_file.vcf.gz |bcftools query  -f '%CHROM\\t%POS\\t%REF\\t%ALT\\t%AC\\t%AN\\n' > population1_summary.txt",br(),
+                                            "The word before _summary.txt will be used as a name for each population so name your files accordingly",
+                                            fileInput(
+                                              inputId = "files", 
+                                              label = "Choose all summary files to upload at once", 
+                                              multiple = TRUE
+                                            )
+                               ),
+                      mainPanel(fluidPage(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text"),
+                                                                                    # This one is linked by the id 'download'
+                                                                                    downloadButton('downloadtable',"Download the summary table"),
                                                                                   fluidRow(column(5,dataTableOutput('dtotable')))
                                        
                                    
                              
                            )
-                  )
+                  ),
                   tabPanel("Other informations", fluid = TRUE,
                            tags$h1("How SNP are computed ?"), 
                            "within population :",br(),
