@@ -17,8 +17,9 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                                           )
                              ),
                              mainPanel(helpText("Once you uplodaded the data, it may take several minutes to show results just under this text"),
-                                       
-                                       tableOutput("contents")
+                                        downloadButton('downloadtable',"Download the summary table"),
+                    fluidRow(column(7,dataTableOutput('dtotable'))
+                                    #   tableOutput("contents")
                              )
                            )
                   ),
@@ -102,12 +103,24 @@ server <- function(input, output) {
     thedata <- reactive(df)
     output$dto <- renderDataTable({thedata()})
     output$download <- downloadHandler(
-      filename = function(){"thename.csv"}, 
+      filename = function(){"Whole_data.csv"}, 
       content = function(fname){
         write.csv(thedata(), fname)
       }
     )
     
+       #Prepare the summary table for download
+    thetable <- reactive(df%>%
+             group_by(pairwise,status)%>%
+             summarise(n=n())%>%
+             spread(status, n))
+    output$dtotable <- renderDataTable({thetable()})
+    output$downloadtable <- downloadHandler(
+      filename = function(){"Summary_table.csv"}, 
+      content = function(fname){
+        write.csv(thetable(), fname)
+      }
+    )
     
     
     return(df%>%
