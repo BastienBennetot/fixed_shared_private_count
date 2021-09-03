@@ -19,7 +19,8 @@ ui <- fluidPage(titlePanel("Shiny App to compute fixed/share/private SNP count")
                                                  # This one is linked by the id 'download'
                                                     #      tableOutput("contents")))
                                                  downloadButton('downloadtable',"Download the summary table"),
-                                                 fluidRow(column(5,dataTableOutput('dtotable')))))
+                                                          tableOutput("contents")))
+                                                # fluidRow(column(5,dataTableOutput('dtotable')))))
                                         )
                            ),
                 tabPanel("Other informations", fluid = TRUE,
