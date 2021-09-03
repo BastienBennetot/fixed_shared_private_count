@@ -35,7 +35,7 @@ When we compare alleles present in both populations, they can have same allele c
 If allele content is different between populations, then they are declared **"diff"**  
 
 ## We can obtain these combinations 
-fixed fixed same  &#10132;  IDENTIC (means this site is FIXED in population A and FIXED in population B with the SAME nucleotide)  
+fixed fixed same  &#10132;  IDENTIC (means this site is FIXED in population A and FIXED in population B with the SAME nucleotide so we consider this site IDENTIC for this pairwise comparison)  
 snp snp same  &#10132;  SHARED  
 fixed snp same  &#10132;  NOT POSSIBLE  
 snp fixed same  &#10132;  NOT POSSIBLE  
